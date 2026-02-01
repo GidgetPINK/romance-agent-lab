@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Romance Agent Lab
 
-## Getting Started
+Romance Agent Lab is an experimental web application that explores how **agentic AI systems** can support long-form creative writing. The project focuses on planning, drafting, and continuity management for romance fiction using a structured, multi-step workflow.
 
-First, run the development server:
+This project is intentionally designed as a **systems-first learning project**, emphasizing architecture, constraints, and reliability over raw text generation.
+
+---
+
+## Problem Statement
+
+Most AI writing tools generate text in isolation. They struggle with:
+
+- maintaining continuity across chapters
+- respecting narrative constraints
+- tracking character growth over time
+- enforcing stylistic and ethical rules
+
+As a result, outputs often feel inconsistent or require heavy manual cleanup.
+
+---
+
+## Solution Approach
+
+Romance Agent Lab treats story creation as a **workflow**, not a single prompt.
+
+Instead of asking an AI to “write a novel,” the system breaks the process into stages:
+
+1. Define constraints and canon (Story Bible)
+2. Plan narrative structure (Outline)
+3. Convert plans into executable units (Scene Cards)
+4. Draft chapters from structured inputs
+5. Review outputs against continuity and constraint rules
+
+This mirrors how human writers actually work, while allowing AI to assist at each step.
+
+---
+
+## Application Workflow
+
+The application UI directly reflects the agent pipeline:
+
+1. **Story Bible**  
+   Stores characters, narrative constraints, and canonical facts.
+
+2. **Outline**  
+   Defines book-level beats and high-level structure.
+
+3. **Scene Cards**  
+   Breaks outline beats into actionable scenes with POV, goals, and emotional shifts.
+
+4. **Chapter Draft**  
+   Generates chapter text from selected scene cards and supports review and editing.
+
+This staged approach is foundational to the project’s agentic design.
+
+---
+
+## Technical Stack
+
+- **Framework:** Next.js (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Version Control:** Git + GitHub
+
+The project is structured to support future expansion into:
+- persistent databases
+- validation layers
+- multi-agent orchestration
+- continuity checking and rule enforcement
+
+---
+
+## Project Status
+
+This project is under active development as a guided learning exercise.
+
+### Completed
+- Application shell and routing
+- Workflow-based page structure
+- Global navigation
+- Formal constraint specification
+- Version-controlled milestones
+
+### Planned
+- Story Bible persistence
+- Outline generation via LLM
+- Scene card generation
+- Chapter drafting
+- Continuity checking agent
+- Constraint validation logic
+
+---
+
+## Running Locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
